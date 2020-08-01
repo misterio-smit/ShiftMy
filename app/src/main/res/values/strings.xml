@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ShiftMy</string>
+    <string name="Pogoda">Погода в Томске</string>
+    <string name="Prognoz">Прогноз погоды</string>
+    <string name="Zagolovok">Заголовок</string>
+    <string name="Opisanie">Описание</string>
+    <string name="DeteilTitle"></string>
+    <string name="DeteilDescription"></string>
+    <string name="ItemTitle"></string>
+
+</resources>
