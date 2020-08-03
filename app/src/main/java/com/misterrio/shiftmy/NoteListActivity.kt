@@ -60,22 +60,23 @@ class NoteListActivity: AppCompatActivity() {
                 -Магнитных бурь нет""".trimMargin("-") )
     )
 
+    val adapter = NoteListAdapter{note ->
+        val intent = Intent(this@NoteListActivity, NoteDetailActivity::class.java)
+        intent.putExtra("Note", note )
+        startActivity(intent)
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.note_list_activity)
 
-        val adapter = NoteListAdapter()
+        val LayoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
 
         recyiclerView.adapter = adapter
-        recyiclerView.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
+        recyiclerView.layoutManager = LayoutManager
 
         adapter.setNoteList(noteList)
-        adapter.setNoteListener(object: NoteListAdapter.NoteListener {
-            override fun onClick(note: Note) {
-                val intent = Intent(this@NoteListActivity, DetailNoteActivity::class.java)
-                intent.putStringArrayListExtra("Note", arrayListOf(note.title, note.description))
-                startActivity(intent)
-            }
-        })
+
     }
 }
