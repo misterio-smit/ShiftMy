@@ -1,4 +1,4 @@
-package com.misterrio.shiftmy
+package com.misterrio.shiftmy.model.entity
 
 import java.io.Serializable
 

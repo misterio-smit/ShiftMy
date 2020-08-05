@@ -1,8 +1,10 @@
-package com.misterrio.shiftmy
+package com.misterrio.shiftmy.presentation.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.misterrio.shiftmy.R
+import com.misterrio.shiftmy.presentation.ui.note.list.NoteListActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

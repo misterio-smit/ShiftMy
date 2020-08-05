@@ -1,11 +1,12 @@
-package com.misterrio.shiftmy
+package com.misterrio.shiftmy.presentation.ui.note.list
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ExpandableListView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.misterrio.shiftmy.R
+import com.misterrio.shiftmy.model.entity.Note
 import java.util.*
 
 
@@ -23,7 +24,10 @@ class NoteListAdapter(private val clickListener:(Note) -> Unit):RecyclerView.Ada
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false)
-        return ViewHolder(view, clickListener)
+        return ViewHolder(
+            view,
+            clickListener
+        )
     }
 
     override fun getItemCount(): Int {
