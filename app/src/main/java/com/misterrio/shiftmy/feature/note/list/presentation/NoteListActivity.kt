@@ -1,4 +1,4 @@
-package com.misterrio.shiftmy.presentation.ui.note.list
+package com.misterrio.shiftmy.feature.note.list.presentation
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,14 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.misterrio.shiftmy.R
-import com.misterrio.shiftmy.model.entity.Note
-import com.misterrio.shiftmy.presentation.ui.note.NoteDetailActivity
-import com.misterrio.shiftmy.presentation.viewmodel.note.list.NoteListViewModel
+import com.misterrio.shiftmy.feature.note.domain.entity.Note
+import com.misterrio.shiftmy.feature.note.detail.presentation.NoteDetailActivity
+import com.misterrio.shiftmy.feature.note.list.di.NoteListViewModelFactory
 import kotlinx.android.synthetic.main.note_list_activity.*
 
 class NoteListActivity: AppCompatActivity() {
 
-    private val viewModel: NoteListViewModel by viewModels()
+    private val viewModel: NoteListViewModel by viewModels{
+        NoteListViewModelFactory()
+    }
     private val adapter = NoteListAdapter {note -> viewModel.noteClicked(note)}
 
 

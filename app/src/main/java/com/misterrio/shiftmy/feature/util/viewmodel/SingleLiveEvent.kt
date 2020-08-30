@@ -1,4 +1,4 @@
-package com.misterrio.shiftmy.presentation.viewmodel
+package com.misterrio.shiftmy.feature.util.viewmodel
 
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner

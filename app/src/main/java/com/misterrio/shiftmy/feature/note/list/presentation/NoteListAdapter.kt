@@ -1,4 +1,4 @@
-package com.misterrio.shiftmy.presentation.ui.note.list
+package com.misterrio.shiftmy.feature.note.list.presentation
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.misterrio.shiftmy.R
-import com.misterrio.shiftmy.model.entity.Note
+import com.misterrio.shiftmy.feature.note.domain.entity.Note
 import java.util.*
 
 

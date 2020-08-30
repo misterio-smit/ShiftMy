@@ -1,87 +1,77 @@
-package com.misterrio.shiftmy.presentation.viewmodel.note.list
+package com.misterrio.shiftmy.feature.note.list.data
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.misterrio.shiftmy.model.entity.Note
-import com.misterrio.shiftmy.presentation.viewmodel.SingleLiveEvent
+import com.misterrio.shiftmy.feature.note.domain.entity.Note
 
-class NoteListViewModel : ViewModel() {
+interface NetworkDataSource {
 
-    private val noteList = listOf(
-        Note(
-            "Понедельник ", """
+    fun getNotes(): List<Note>
+}
+class NetworkNoteDataSourceImpl : NetworkDataSource {
+
+    override fun getNotes(): List<Note> =
+        listOf(
+    Note(
+    "Понедельник ", """
                 -Ветер: ЮЗ 1 м/c
                 -Давление: 749 мм рт. ст.
-                -Влажность: 40%  
+                -Влажность: 40%
                 -Долгота дня: 16:08
                 -Восход 05:22, закат 21:30
                 -Магнитных бурь нет""".trimMargin("-")
-        ),
-        Note(
-            "Вторник", """
+    ),
+    Note(
+    "Вторник", """
                 -Ветер: ЮВ 10 м/c
                 -Давление: 741 мм рт. ст.
-                -Влажность: 42%  
+                -Влажность: 42%
                 -Долгота дня: 16:03
                 -Восход 05:25, закат 21:28
                 -Магнитных бурь нет""".trimMargin("-")
-        ),
-        Note(
-            "Среда", """
+    ),
+    Note(
+    "Среда", """
                 -Ветер: ЮЗ 3 м/c
                 -Давление: 748 мм рт. ст.
-                -Влажность: 49%  
+                -Влажность: 49%
                 -Долгота дня: 15:58
                 -Восход 05:27, закат 21:25
                 -Магнитных бурь нет""".trimMargin("-")
-        ),
-        Note(
-            "Четверг", """
+    ),
+    Note(
+    "Четверг", """
                 -Ветер: ЮВ 8 м/c
                 -Давление: 748 мм рт. ст.
-                -Влажность: 51%  
+                -Влажность: 51%
                 -Долгота дня: 15:55
                 -Восход 05:31, закат 21:22
                 -Магнитных бурь нет""".trimMargin("-")
-        ),
-        Note(
-            "Пятница", """
+    ),
+    Note(
+    "Пятница", """
                 -Ветер: ЮВ 5 м/c
                 -Давление: 744 мм рт. ст.
-                -Влажность: 41%  
+                -Влажность: 41%
                 -Долгота дня: 15:50
                 -Восход 05:37, закат 21:18
                 -Магнитных бурь нет""".trimMargin("-")
-        ),
-        Note(
-            "Суббота", """
+    ),
+    Note(
+    "Суббота", """
                 -Ветер: ЮЗ 1 м/c
                 -Давление: 749 мм рт. ст.
-                -Влажность: 47%  
+                -Влажность: 47%
                 -Долгота дня: 15:45
                 -Восход 05:42, закат 21:15
                 -Магнитных бурь нет""".trimMargin("-")
-        ),
-        Note(
-            "Воскресенье", """
+    ),
+    Note(
+    "Воскресенье", """
                 -Ветер: ЮВ 6 м/c
                 -Давление: 753 мм рт. ст.
-                -Влажность: 40%  
+                -Влажность: 40%
                 -Долгота дня: 15:43
                 -Восход 05:52, закат 21:07
                 -Магнитных бурь нет""".trimMargin("-")
-        )
     )
-
-    val notes = MutableLiveData<List<Note>>()
-    val noteClickedEvent = SingleLiveEvent<Note>()
-
-    init {
-        notes.value = noteList
-    }
-
-    fun noteClicked(note : Note) {
-        noteClickedEvent(note)
-
-    }
+  )
 }
